@@ -1,10 +1,10 @@
 import Header from "@/components/Header";
 
-const SingleProduct = () => {
+const SingleProduct = ({ params }) => {
   return (
     <>
       <Header />
-      SingleProduct
+      SingleProduct {params.productId}
     </>
   );
 };
