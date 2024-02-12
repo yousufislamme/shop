@@ -1,10 +1,12 @@
 "use client";
 import Header from "@/components/Header";
 import { Context } from "@/context";
+import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { CiGrid2H, CiGrid41 } from "react-icons/ci";
 import Button from "../cart/Button";
+
 const Products = () => {
   const [product, setProduct] = useState([]);
   const { handleAddToCart, cartItems } = useContext(Context);
@@ -51,7 +53,10 @@ const Products = () => {
                 id={item.id}
                 className={`${isColumnLayout ? "flex" : "flex-none"} group overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl`}
               >
-                <img
+                <Image
+                  quality={20}
+                  width={400}
+                  height={400}
                   className="h-[300px] w-[300px] gap-5  rounded-t-lg bg-no-repeat object-cover object-top duration-150 group-hover:scale-105"
                   src={item.image}
                   alt={item.title}
