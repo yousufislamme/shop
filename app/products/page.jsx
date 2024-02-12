@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { CiGrid2H, CiGrid41 } from "react-icons/ci";
 import Button from "../cart/Button";
-
 const Products = () => {
   const [product, setProduct] = useState([]);
   const { handleAddToCart, cartItems } = useContext(Context);
@@ -63,7 +62,10 @@ const Products = () => {
                 />
                 <div className="px-3 py-2">
                   <h1 className="mb-2 text-lg font-semibold leading-6">
-                    <Link href="">{item.title}</Link>
+                    {/* click to single page  */}
+                    <Link href={`/products/${item.id}`} passHref>
+                      {item.title}
+                    </Link>
                   </h1>
                   <p>
                     {item.rating.rate}({item.rating.count})
